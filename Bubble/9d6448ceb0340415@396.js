@@ -162,7 +162,7 @@ html`<!DOCTYPE html>
   });
   
   const textb = svg.append("text").text("").attr("x", 60).attr("y", 100).attr("fill", "black");
-  let startdate = new Date(2020, 6, 1,7,55)
+  let startdate = new Date(2020, 6, 1,7,30)
   
   // Make time pass. Adjust node stage as necessary.
   function timer() {
@@ -187,14 +187,14 @@ html`<!DOCTYPE html>
     // Update counters.
     svg.selectAll('.grpcnt').text(d => groups[d].cnt);
     
-    if (currdate < new Date(2020, 6, 1,17,05)) {
+    if (currdate < new Date(2020, 6, 1,17,30)) {
       d3.timeout(timer, 250);
     }
   } // @end timer()
   
   
   // Start things off after a few seconds.
-  d3.timeout(timer, 4000);
+  d3.timeout(timer, 5000);
   
   return svg.node()
 }
